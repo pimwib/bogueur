@@ -1,0 +1,16 @@
+---
+layout: default
+title: Catégories
+use:
+    - posts_categories
+---
+<h2>Catégories</h2>
+
+<div>
+{% for category,posts in data.posts_categories %}
+    <span class="label label-{{category}} text-muted">
+        <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>
+    </span>
+    &nbsp;
+{% endfor %}
+</div>

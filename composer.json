@@ -1,0 +1,23 @@
+{
+    "name": "git/nom_projet",
+    "description": "",
+    "type": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pimwib",
+            "email": "",
+            "homepage": ""
+        }
+    ],
+    "require": {
+        "sculpin/sculpin": "2.*@dev",
+        "composer/composer": "@dev",
+        "components/jquery": "1.10.*",
+        "components/highlightjs": "7.5.*"
+    },
+    "config": {
+        "component-dir": "source/components"
+    },
+     "minimum-stability" : "dev"
+}

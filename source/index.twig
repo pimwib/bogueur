@@ -1,0 +1,17 @@
+---
+layout: default
+title: Accueil
+generator: pagination
+use:
+    - posts
+    - posts_categories
+    - posts_tags
+---
+{% for post in page.pagination.items %}
+<article class="accueil">
+    <a class="h1" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+    {% for category in post.meta.categories %}
+    <span class="label label-{{category}} text-muted"><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a></span>
+    {% endfor %}
+</article>
+{% endfor %}

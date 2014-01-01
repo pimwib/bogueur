@@ -1,0 +1,390 @@
+/* =============================================================
+
+	Kraken v3.1
+	A lightweight front-end boilerplate by Chris Ferdinandi.
+	http://gomakethings.com
+
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
+
+
+	# Colors
+	Primary (Blue): #0088cc
+	Black: #272727
+	White: #ffffff
+	Success (Green): #377f31;
+	Danger (Red): #880e14;
+	Warning (Yellow): #dba909;
+	Code (Fuscia): #dd1144;
+	Gray (Dark): #808080
+	Gray (Light): #e5e5e5
+
+	# Font Stack
+	Sans-Serif (default): "Helvetica Neue", Arial, sans-serif
+	Serif (suggested): Georgia, Times, serif
+	Monospace: Menlo, Monaco, "Courier New", monospace
+
+	# Typographic Scale
+	(For math purposes. Actual font sizes in ems.)
+	1px, 4px, 5px, 8px, 9px, 11px, 12px, 13px, 15px, 16px, 19px, 21px, 24px, 28px, 32px, 48px, 64px, 80px, 96px
+	line height: 1.5em on small screens, 1.5625em on big screens
+ ============================================================= */
+/* =============================================================
+	CSS RESET
+	Meyer's CSS Reset, Normalized.css, and custom code. ============================================================= */
+/*  Mobile Screen Resizing */
+@-webkit-viewport { width: device-width; zoom: 1.0; }
+@-moz-viewport { width: device-width; zoom: 1.0; }
+@-ms-viewport { width: device-width; zoom: 1.0; }
+@-o-viewport { width: device-width; zoom: 1.0; }
+@viewport { width: device-width; zoom: 1.0; }
+/*  Remove browser defaults */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, button, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/*  Set display type for HTML5 semantic elements */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+/*  Force scrollbar display to prevent jumping on pages. Fix text resize bug on mobile devices. */
+html { overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+/*  Display audio, canvas, and video elements as inline block elements. */
+audio, canvas, video { display: inline-block; }
+
+/*  Prevent modern browsers from displaying audio without controls. */
+audio:not([controls]) { display: none; height: 0; }
+
+/*  Prevent img and video elements from spilling outside of the page on smaller screens. */
+img, video { max-width: 100%; height: auto; }
+
+/*  Prevent iframe, object, and embed elements from spilling outside of the page on smaller screens. */
+iframe, object, embed { max-width: 100%; }
+
+/* Address [hidden] styling not present in IE 8/9. Hide the template element in IE, Safari, and Firefox < 22. */
+[hidden], template { display: none; visibility: hidden; }
+
+/*  Prevents IE from making scaled images look like crap */
+img { -ms-interpolation-mode: bicubic; }
+
+/*  Address outline inconsistency between Chrome and other browsers. */
+a:focus, button:focus { outline: thin dotted; outline: 0.3125em auto -webkit-focus-ring-color; outline-offset: -0.15625em; }
+
+/*  Improve readability when focused and also mouse hovered in all browsers. */
+a:hover, a:active { outline: 0; }
+
+/* =============================================================
+	TYPOGRAPHY
+	Sets font styles for entire site. ============================================================= */
+body { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 100%; line-height: 1.5; color: #1d1f21; background: #f1f1f1; }
+
+p { margin-bottom: 1.5625em; }
+
+@media (min-width: 50em) { body { line-height: 1.5625; } }
+/*  Sizes For smaller and larger text */
+.text-small { font-size: 0.9375em; }
+
+.text-smaller { font-size: 0.75em; }
+
+.text-tall { font-size: 1.1875em; line-height: 1.4; }
+
+@media (min-width: 50em) { .text-tall { font-size: 1.3125em; } }
+/*  Colors For alternate text colors */
+.text-muted, .text-muted a { color: grey; }
+
+/*  Links Hyperlink styling */
+a { text-decoration: none; word-wrap: break-word; -webkit-transition: color 0.4s ease-in-out; -moz-transition: color 0.4s ease-in-out; transition: color 0.4s ease-in-out; color: #2c3e50; }
+
+a:hover { text-decoration: none; color: #e67e22; }
+
+a img { border: none; background: none; }
+
+/*  Prevents border/background on linked image hover. Adds slight opacity. */
+a:hover img { border: none; background: none; opacity: 0.8; filter: alpha(opacity=80); }
+
+/*  Lists Styling for lists */
+ul, ol, dl { margin-bottom: 1.5625em; margin-left: 2em; }
+
+ul ul, ul ol, ol ol, ol ul { margin-bottom: 0; }
+
+ul { list-style: disc; }
+
+ol { list-style: decimal; }
+
+dl { margin-left: 0; }
+
+dt { font-weight: bold; }
+
+/*  Removes list styling. For semantic reasons, should only be used on unordered lists. */
+.list-unstyled { margin-left: 0; list-style: none; }
+
+/*  Headings h1 through h6 styling Heading class lets you use one heading type for semantics but style it as another heading type. */
+h1, h2, h3, h4, h5, h6 { line-height: 1.2; font-weight: normal; margin-bottom: 1em; padding-top: 1em; }
+
+h1, .h1 { font-size: 1.5em; padding-top: .5em; }
+
+h2, .h2 { font-size: 1.3125em; }
+
+h3, .h3 { font-size: 1.1875em; }
+
+h4, h5, h6, .h4, .h5, .h6 { font-size: 0.9375em; font-style: italic; }
+
+h4, .h4 { text-transform: uppercase; }
+
+@media (min-width: 50em) { h1, .h1 { font-size: 1.75em; } }
+/*  Lines, Quotes and Emphasis */
+/*  Lines */
+hr { margin: 2em auto; border: 0; border-top: 0.0725em solid #e5e5e5; border-bottom: 0 solid #f1f1f1; }
+
+/*  Bold */
+strong { font-weight: bold; }
+
+/*  Italics */
+em { font-style: italic; }
+
+/*  Subscript & Superscript */
+sub, sup { position: relative; font-size: 85%; font-weight: bold; line-height: 0; vertical-align: baseline; margin-left: 0.25em; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/*  Highlighting colors */
+::selection { color: #f1f1f1; background: #3498db; }
+
+::-moz-selection { color: #f1f1f1; background: #3498db; }
+
+/*  Blockquotes */
+blockquote { border-left: 0.25em solid #e5e5e5; margin-bottom: 1.5625em; padding-left: 1.5625em; padding-right: 1.5625em; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+/* =============================================================
+
+	Labels v1.0
+	Lightweight CSS labels by Chris Ferdinandi.
+	http://gomakethings.com
+
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
+ ============================================================= */
+.label { font-size: 0.8125em; color: #f1f1f1; background-color: #3498db; font-weight: bold; padding: 0.25em 0.5em; border-radius: 0.0725em; }
+
+span.label a { color: #f1f1f1; }
+span.label a:hover { color: #e67e22; }
+
+.label-inline { display: inline-block; width: 100px; }
+
+.label-success { background-color: #2ecc71; }
+
+.label-danger { background-color: #e74c3c; }
+
+.label-warning { background-color: #f39c12; }
+
+.label-cat1a { background-color: #7ee2a8; }
+
+.label-cat1 { background-color: #f29f97; }
+
+@font-face { font-family: "icomoon"; font-weight: "normal"; font-style: "normal"; src: url("../fonts/icomoon.eot"); src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg"); }
+[class^="icon-"], [class*=" icon-"] { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.icon-chevron-left:before { content: "\e600"; }
+
+.icon-chevron-right:before { content: "\e601"; }
+
+.icon-twitter-sign:before { content: "\e602"; }
+
+.icon-envelope-alt:before { content: "\e603"; }
+
+.icon-github-alt:before { content: "\e604"; }
+
+.icon-user:before { content: "\e605"; }
+
+.icon-ok:before { content: "\e606"; }
+
+.icon-remove:before { content: "\e607"; }
+
+.icon-th-large:before { content: "\e608"; }
+
+.icon-envelope:before { content: "\e609"; }
+
+.icon-home:before { content: "\e60a"; }
+
+.icon-download-alt:before { content: "\e60b"; }
+
+.icon-bookmark:before { content: "\e60c"; }
+
+.icon-arrow-right:before { content: "\e60d"; }
+
+.icon-arrow-left:before { content: "\e60e"; }
+
+.icon-arrow-up:before { content: "\e60f"; }
+
+.icon-arrow-down:before { content: "\e610"; }
+
+.icon-gift:before { content: "\e611"; }
+
+.icon-exclamation-sign:before { content: "\e612"; }
+
+.icon-asterisk:before { content: "\e613"; }
+
+.icon-warning-sign:before { content: "\e614"; }
+
+.icon-chevron-up:before { content: "\e615"; }
+
+.icon-chevron-down:before { content: "\e616"; }
+
+.icon-folder-open:before { content: "\e617"; }
+
+.icon-folder-close:before { content: "\e618"; }
+
+.icon-cogs:before { content: "\e619"; }
+
+.icon-comments:before { content: "\e61a"; }
+
+.icon-thumbs-up:before { content: "\e61b"; }
+
+.icon-thumbs-down:before { content: "\e61c"; }
+
+.icon-github-sign:before { content: "\e61d"; }
+
+.icon-bookmark-empty:before { content: "\e61e"; }
+
+.icon-twitter:before { content: "\e61f"; }
+
+.icon-github:before { content: "\e620"; }
+
+.icon-bullhorn:before { content: "\e621"; }
+
+.icon-bell:before { content: "\e622"; }
+
+.icon-beaker:before { content: "\e623"; }
+
+.icon-money:before { content: "\e624"; }
+
+.icon-dashboard:before { content: "\e625"; }
+
+.icon-ambulance:before { content: "\e626"; }
+
+.icon-fighter-jet:before { content: "\e627"; }
+
+.icon-desktop:before { content: "\e628"; }
+
+.icon-laptop:before { content: "\e629"; }
+
+.icon-tablet:before { content: "\e62a"; }
+
+.icon-mobile:before { content: "\e62b"; }
+
+.icon-quote-left:before { content: "\e62c"; }
+
+.icon-quote-right:before { content: "\e62d"; }
+
+.icon-folder-close-alt:before { content: "\e62e"; }
+
+.icon-folder-open-alt:before { content: "\e62f"; }
+
+.icon-frown:before { content: "\e630"; }
+
+.icon-meh:before { content: "\e631"; }
+
+.icon-rss-sign:before { content: "\e632"; }
+
+.icon-thumbs-up2:before { content: "\e633"; }
+
+.icon-thumbs-down2:before { content: "\e634"; }
+
+.icon-bug:before { content: "\e635"; }
+
+.tomorrow-comment, pre .comment, pre .title { color: #969896; }
+
+.tomorrow-red, pre .variable, pre .attribute, pre .tag, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .css .id, pre .css .class, pre .css .pseudo { color: #cc6666; }
+
+.tomorrow-orange, pre .number, pre .preprocessor, pre .pragma, pre .built_in, pre .literal, pre .params, pre .constant { color: #de935f; }
+
+.tomorrow-yellow, pre .ruby .class .title, pre .css .rules .attribute { color: #f0c674; }
+
+.tomorrow-green, pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata { color: #b5bd68; }
+
+.tomorrow-aqua, pre .css .hexcolor { color: #8abeb7; }
+
+.tomorrow-blue, pre .function, pre .python .decorator, pre .python .title, pre .ruby .function .title, pre .ruby .title .keyword, pre .perl .sub, pre .javascript .title, pre .coffeescript .title { color: #81a2be; }
+
+.tomorrow-purple, pre .keyword, pre .javascript .function { color: #b294bb; }
+
+pre code { display: block; background: #1d1f21; color: #c5c8c6; padding: 0.5em; white-space: pre-wrap; font-size: 80%; }
+
+@media (min-width: 45em) { pre code { font-size: 100%; } }
+pre .coffeescript .javascript, pre .javascript .xml, pre .tex .formula, pre .xml .javascript, pre .xml .vbscript, pre .xml .css, pre .xml .cdata { opacity: 0.5; }
+
+/* =============================================================
+	ALIGNMENT, SPACING & VISIBILITY
+	Override default alignment, spacing and visibilty. ============================================================= */
+/*  Text alignment */
+.text-center { text-align: center; }
+
+.text-right { text-align: right; }
+
+.text-left { text-align: left; }
+
+/*  Floats */
+.float-left { float: left; }
+
+.float-center { float: none; margin-left: auto; margin-right: auto; }
+
+.float-right { float: right; }
+
+/*  Spacing */
+.no-space { margin: 0; padding: 0; }
+
+.no-space-bottom { margin-bottom: 0; padding-bottom: 0; }
+
+.no-space-top { margin-top: 0; padding-top: 0; }
+
+.space-bottom { margin-bottom: 2em; }
+
+.space-bottom-small { margin-bottom: 0.5em; padding-bottom: 0; }
+
+.space-top { padding-top: 0.8125em; }
+
+/*  Screen Reader Text */
+.screen-reader { position: absolute; top: -9999em; left: -9999em; }
+
+/*  Clearfix */
+.group:before, .group:after { display: table; content: ""; }
+
+.group:after { clear: both; }
+
+/* =============================================================
+	PRINT STYLES
+	Styling for printed content. Adapted from HTML5BP.
+	http://html5boilerplate.com ============================================================= */
+@media print { /*  Universal selector. Reset all content to transparent background, black color, and remove box and text shadows. */
+  * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+  /*  Specifies page margin */
+  @page { margin: 0.5cm; }
+  /*  Underline all links */
+  a, a:visited { text-decoration: underline; }
+  /*  Show URL after links */
+  a[href]:after { content: " (" attr(href) ")"; }
+  /*  Don't show URL for internal links */
+  a[href^="#"]:after { content: ""; }
+  /*  Specifies the minimum number of lines to print at the top and bottom of a page. */
+  p, h1, h2, h3 { orphans: 3; widows: 3; }
+  /*  Avoid inserting a page break after headers */
+  h1, h2, h3 { page-break-after: avoid; }
+  /*  Change border color on blockquotes and preformatted text. Avoid page breaks inside the content */
+  pre, blockquote { border-color: #999; page-break-inside: avoid; }
+  /*  Displayed as a table header row group */
+  thead { display: table-header-group; }
+  /*  Avoid inserting a page break inside table rows and images */
+  tr, img { page-break-inside: avoid; } }
+header { background: #1d1f21; color: white; text-align: center; padding-right: 5%; padding-left: 5%; }
+
+@media (min-width: 45em) { header { width: 15%; position: fixed; top: 0; bottom: 0; left: 0; z-index: 1; }
+  header p.h1 { padding-top: 1.5em; font-size: 4.5em; } }
+header a { color: white; }
+
+section { padding-right: 3%; padding-left: 3%; }
+
+@media (min-width: 45em) { section { float: left; width: 69%; margin-left: 25%; padding-top: 2em; } }

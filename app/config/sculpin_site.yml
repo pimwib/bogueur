@@ -1,0 +1,11 @@
+# The contents of this file are parsed and made available as
+# via `site.*`. So for example, {{ site.title }} can be used
+# in a template to get the contents of the `title` key.
+title: PimWib
+subtitle: "Contient du PHP avec Symfony ou Silex, un peu de Javascript avec jQuery...<br> Enfin que du bonheur!"
+description: "Contient du PHP avec Symfony ou Silex, un peu de Javascript avec jQuery"
+url: "http://localhost/projets/bogueur/dev/output_dev"
+twitter: pimwib
+github: pimwib
+atom: false
+disqus: bogueur

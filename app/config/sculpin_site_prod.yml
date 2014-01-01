@@ -1,0 +1,8 @@
+imports:
+  - sculpin_site.yml
+
+env: prod
+url: "http://bogueur.com"
+mail: blog@bogueur.com
+ganalytic: "UA-46791157-1"
+gurl: "bogueur.com"
