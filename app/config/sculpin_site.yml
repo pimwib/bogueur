@@ -1,6 +1,3 @@
-# The contents of this file are parsed and made available as
-# via `site.*`. So for example, {{ site.title }} can be used
-# in a template to get the contents of the `title` key.
 title: Bogueur
 subtitle: "Contient du PHP avec Symfony ou Silex, un peu de Javascript avec jQuery...<br> Enfin que du bonheur!"
 description: "Contient du PHP avec Symfony ou Silex, un peu de Javascript avec jQuery"
@@ -9,3 +6,4 @@ twitter: pimwib
 github: pimwib
 atom: false
 disqus: bogueur
+assets_version: 1
