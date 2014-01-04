@@ -9,23 +9,17 @@ pagination:
 {% block title %}{{ page.title }} "{{ page.category }}"{% endblock %}
 {% block content %}
 
-<h2><span class="text-small text-muted">Catégorie : </span>"{{ page.category }}"</h2>
-<ul>
-{% for post in page.pagination.items %}
-  <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+<h1><span class="text-small text-muted">Catégorie : </span>"{{ page.category }}"</h1>
+<hr>
 
-<div>
-{% if page.pagination.previous_page or page.pagination.next_page %}
-    <nav class="article clearfix">
-    {% if page.pagination.previous_page %}
-    <a class="previous" href="{{ site.url }}{{ page.pagination.previous_page.url }}" title="Previous Page"><span class="title">Previous Page</span></a>
-    {% endif %}
-    {% if page.pagination.next_page %}
-    <a class="next" href="{{ site.url }}{{ page.pagination.next_page.url }}" title="Next Page"><span class="title">Next Page</span></a>
-    {% endif %}
-    </nav>
-{% endif %}
-</div>
+{% for post in page.pagination.items %}
+<article class="accueil">
+    <a class="h1" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+    {% for category in post.meta.categories %}
+    <span class="label label-{{category}} text-muted"><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a></span>
+    {% endfor %}
+</article>
+{% endfor %}
+
+
 {% endblock content %}
