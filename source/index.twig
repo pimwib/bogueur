@@ -11,7 +11,9 @@ use:
 <article class="accueil">
     <a class="h1" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
     {% for category in post.meta.categories %}
-    <span class="label label-{{category}} text-muted"><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a></span>
+    <span class="label label-{{category}} text-muted">
+        <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}" title="Voir tous les articles de la catégorie: {{ category }}">{{ category }}</a>
+    </span>
     {% endfor %}
 </article>
 {% endfor %}
