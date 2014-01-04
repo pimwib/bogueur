@@ -34,10 +34,15 @@
 	Meyer's CSS Reset, Normalized.css, and custom code. ============================================================= */
 /*  Mobile Screen Resizing */
 @-webkit-viewport { width: device-width; zoom: 1.0; }
+
 @-moz-viewport { width: device-width; zoom: 1.0; }
+
 @-ms-viewport { width: device-width; zoom: 1.0; }
+
 @-o-viewport { width: device-width; zoom: 1.0; }
+
 @viewport { width: device-width; zoom: 1.0; }
+
 /*  Remove browser defaults */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, button, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 100%; font: inherit; vertical-align: baseline; }
 
@@ -88,10 +93,10 @@ p { margin-bottom: 1.5625em; }
 
 @media (min-width: 50em) { .text-tall { font-size: 1.3125em; } }
 /*  Colors For alternate text colors */
-.text-muted, .text-muted a { color: grey; }
+.text-muted, .text-muted a { color: gray; }
 
 /*  Links Hyperlink styling */
-a { text-decoration: none; word-wrap: break-word; -webkit-transition: color 0.4s ease-in-out; -moz-transition: color 0.4s ease-in-out; transition: color 0.4s ease-in-out; color: #2c3e50; }
+a { text-decoration: none; word-wrap: break-word; -webkit-transition: color 0.4s ease-in-out; -moz-transition: color 0.4s ease-in-out; transition: color 0.4s ease-in-out; color: #2980b9; }
 
 a:hover { text-decoration: none; color: #e67e22; }
 
@@ -186,6 +191,7 @@ span.label a:hover { color: #e67e22; }
 .label-cat1 { background-color: #f29f97; }
 
 @font-face { font-family: "icomoon"; font-weight: "normal"; font-style: "normal"; src: url("../fonts/icomoon.eot"); src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg"); }
+
 [class^="icon-"], [class*=" icon-"] { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .icon-chevron-left:before { content: "\e600"; }
@@ -360,7 +366,7 @@ pre .coffeescript .javascript, pre .javascript .xml, pre .tex .formula, pre .xml
 	Styling for printed content. Adapted from HTML5BP.
 	http://html5boilerplate.com ============================================================= */
 @media print { /*  Universal selector. Reset all content to transparent background, black color, and remove box and text shadows. */
-  * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+  * { background: transparent !important; color: black !important; box-shadow: none !important; text-shadow: none !important; }
   /*  Specifies page margin */
   @page { margin: 0.5cm; }
   /*  Underline all links */
@@ -388,3 +394,5 @@ header a { color: white; }
 section { padding-right: 3%; padding-left: 3%; }
 
 @media (min-width: 45em) { section { float: left; width: 69%; margin-left: 25%; padding-top: 2em; } }
+a.h1 { color: #2c3e50; }
+a.h1:hover { color: #e67e22; }
