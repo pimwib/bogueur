@@ -1,0 +1,124 @@
+@font-face { font-family: "icomoon"; font-weight: "normal"; font-style: "normal"; src: url("../fonts/icomoon.eot"); src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg"); }
+[class^="icon-"], [class*=" icon-"] { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.icon-chevron-left:before { content: "\e600"; }
+
+.icon-chevron-right:before { content: "\e601"; }
+
+.icon-twitter-sign:before { content: "\e602"; }
+
+.icon-envelope-alt:before { content: "\e603"; }
+
+.icon-github-alt:before { content: "\e604"; }
+
+.icon-user:before { content: "\e605"; }
+
+.icon-ok:before { content: "\e606"; }
+
+.icon-remove:before { content: "\e607"; }
+
+.icon-th-large:before { content: "\e608"; }
+
+.icon-envelope:before { content: "\e609"; }
+
+.icon-home:before { content: "\e60a"; }
+
+.icon-download-alt:before { content: "\e60b"; }
+
+.icon-bookmark:before { content: "\e60c"; }
+
+.icon-arrow-right:before { content: "\e60d"; }
+
+.icon-arrow-left:before { content: "\e60e"; }
+
+.icon-arrow-up:before { content: "\e60f"; }
+
+.icon-arrow-down:before { content: "\e610"; }
+
+.icon-gift:before { content: "\e611"; }
+
+.icon-exclamation-sign:before { content: "\e612"; }
+
+.icon-asterisk:before { content: "\e613"; }
+
+.icon-warning-sign:before { content: "\e614"; }
+
+.icon-chevron-up:before { content: "\e615"; }
+
+.icon-chevron-down:before { content: "\e616"; }
+
+.icon-folder-open:before { content: "\e617"; }
+
+.icon-folder-close:before { content: "\e618"; }
+
+.icon-cogs:before { content: "\e619"; }
+
+.icon-comments:before { content: "\e61a"; }
+
+.icon-thumbs-up:before { content: "\e61b"; }
+
+.icon-thumbs-down:before { content: "\e61c"; }
+
+.icon-github-sign:before { content: "\e61d"; }
+
+.icon-bookmark-empty:before { content: "\e61e"; }
+
+.icon-twitter:before { content: "\e61f"; }
+
+.icon-github:before { content: "\e620"; }
+
+.icon-bullhorn:before { content: "\e621"; }
+
+.icon-bell:before { content: "\e622"; }
+
+.icon-beaker:before { content: "\e623"; }
+
+.icon-money:before { content: "\e624"; }
+
+.icon-dashboard:before { content: "\e625"; }
+
+.icon-ambulance:before { content: "\e626"; }
+
+.icon-fighter-jet:before { content: "\e627"; }
+
+.icon-desktop:before { content: "\e628"; }
+
+.icon-laptop:before { content: "\e629"; }
+
+.icon-tablet:before { content: "\e62a"; }
+
+.icon-mobile:before { content: "\e62b"; }
+
+.icon-quote-left:before { content: "\e62c"; }
+
+.icon-quote-right:before { content: "\e62d"; }
+
+.icon-folder-close-alt:before { content: "\e62e"; }
+
+.icon-folder-open-alt:before { content: "\e62f"; }
+
+.icon-frown:before { content: "\e630"; }
+
+.icon-meh:before { content: "\e631"; }
+
+.icon-rss-sign:before { content: "\e632"; }
+
+.icon-thumbs-up2:before { content: "\e633"; }
+
+.icon-thumbs-down2:before { content: "\e634"; }
+
+.icon-bug:before { content: "\e635"; }
+
+body { margin: 0; background: #f1f1f1; }
+
+html { font-size: 100%; }
+
+html, button { font-family: "Helvetica Neue", Arial, sans-serif; }
+
+h1 { font-size: 2em; }
+
+.layout { padding-left: 25%; position: relative; font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; }
+
+.sidebar { background: #1d1f21; bottom: 0; color: #f1f1f1; margin-left: -25%; position: fixed; top: 0; width: 25%; }
+.sidebar .header { margin: 50% 2em 0; text-align: center; }
+.sidebar .header h1 a { color: #f1f1f1; font-size: 8em; margin: 0; text-transform: uppercase; }
