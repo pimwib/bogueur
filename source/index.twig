@@ -10,11 +10,9 @@ use:
 <ul class="list-unstyled">
 {% for post in page.pagination.items %}
 <li class="accueil">
-    <a class="h1" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+    {{ post.date|date('d/m/Y') }} --  <a class="h1" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> -- 
     {% for category in post.meta.categories %}
-    <span class="label label-{{category}} text-muted">
-        <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}" title="Voir tous les articles de la catégorie: {{ category }}">{{ category }}</a>
-    </span>
+    <span class="label label-{{category}}"><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}" title="Voir tous les articles de la catégorie: {{ category }}">{{ category }}</a></span>
     {% endfor %}
 </li>
 {% endfor %}

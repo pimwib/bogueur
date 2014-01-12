@@ -6,20 +6,23 @@ categories:
     - sculpin
 ---
 
-1. Pourquoi un générateur de site statique ?
-2. Présentation du projet
-3. Installation de sculpin
-4. Les premières pages – pour l'exemple
-5. Le template
-6. Les articles
-1. Explication du format md
-7. La pagination
-8. Les catégories et les tags
-9. Les fichiers de configuration
-10. La page d'erreur, le sitemap.xml et le .htaccess
-11. Mise en production
+<a id="sommaire"></a>
 
-1. Pourquoi un générateur de site statique ?
+1. [Pourquoi un générateur de site statique ?](#chap1)
+2. [Présentation du projet](#chap2)
+3. [nstallation de sculpin](#chap3)
+4. [Les premières pages – pour l'exemple](#chap4)
+5. [Le template](#chap5)
+6. [Les articles](#chap6)
+1. [Explication du format md](#chap7)
+7. [La pagination](#chap8)
+8. [Les catégories et les tags](#chap9)
+9. [Les fichiers de configuration](#chap10)
+10. [La page d'erreur, le sitemap.xml et le .htaccess](#chap11)
+11. [Mise en production](#chap12)
+
+
+1. Pourquoi un générateur de site statique ?<a id="chap1"></a> [<i class="icon icon-chevron-up"></i>](#sommaire "Retourner au sommaire")
 --------------------------------------------
 
 Quand j'ai voulu créer ce blog je me suis posé la question de ce que j'allais utiliser comme techno. Les deux possibilités que j'avais en tête était d'utiliser un framework PHP(Silex ou Symfony) ou un CMS (Wordpress).
@@ -44,7 +47,7 @@ De plus il n'y a que des avantages:
     + différents modules de symfony
 
 
-2. Présentation du projet
+2. Présentation du projet<a id="chap2"></a> [<i class="icon icon-chevron-up"></i>](#sommaire "Retourner au sommaire")
 -------------------------
 
 Dans ce tutoriel, je vais vous expliquer comment mettre un blog en place rapidement avec Sculpin.
@@ -53,7 +56,7 @@ En page d'accueil seront affichés les articles par date, il y aura une paginati
 Ça me ferait un grand plaisir que vous me laissiez des commentaires, soit pour m'encourager ou bien pour reprendre des bêtises que j'aurai pu écrire. 
 
 
-3. Installation de Sculpin
+3. Installation de Sculpin<a id="chap3"></a> [<i class="icon icon-chevron-up"></i>](#sommaire "Retourner au sommaire")
 --------------------------
 
 Tout est très bien expliqué dans la documentation de Sculpin (lien). En voici un résumé rapide, avec les commandes pour les utilisateurs sous Linux :
@@ -68,7 +71,7 @@ Tout est très bien expliqué dans la documentation de Sculpin (lien). En voici 
 8. Afin on créait le dossier source à la racine de notre projet. C'est dans ce répertoire que l'on va travailler 
 
 
-4. Les premières pages – pour l'exemple
+4. Les premières pages – pour l'exemple<a id="chap4"></a> [<i class="icon icon-chevron-up"></i>](#sommaire "Retourner au sommaire")
 ---------------------------------------
 
 Pour l'exemple, on va créait des pages simples qui seront une page "accueil" et une page "à propos". On va mettre du contenu factice pour le moment mais elles nous resservirons plus tard dans le projet.
@@ -139,7 +142,7 @@ Une petite astuce bien partique, pour générer les fichiers automatiquement dè
  php bin/sculpin generate --watch
 ~~~
 
-5. Le template
+5. Le template<a id="chap5"></a> [<i class="icon icon-chevron-up"></i>](#sommaire "Retourner au sommaire")
 -------------
 
 Pour nous simplifier la vie nous allons écrire un template qui servira de base à nos pages.
@@ -182,7 +185,7 @@ Dans notre dossier source, nous créons un répertoire appelé _views et nous al
             <div class="content">
 
                 <div class="posts">
-                    {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+                    {% verbatim %}{% block content_wrapper %}{% block content %}{% endblock%}{% endblock%} {% endverbatim %}
                 </div>
 
                 <footer class="footer">
@@ -201,22 +204,22 @@ Dans notre dossier source, nous créons un répertoire appelé _views et nous al
 </html>
 ~~~
 
-La partie intéressante est « {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %} »
+La partie intéressante est « {% verbatim %}{% block content_wrapper %}{% block content %}{% endblock%}{% endblock%}{% endverbatim %} »
 Où le block content_wrapper nous servira au design du contenu et à mettre tout le contenu annexe, comme le titre de la page ou les tags de cette page, et le block content nous servira à y mettre le contenu.
 Désormais nous pouvons modifier la page index.twig et la page about.twig pour utiliser ce template.
 
-~~~html
+
 Par exemple pour la page about.twig :
+~~~html
 ---
 permalink: "about.html"
 layout: default
 ---
-
-{% block content %}
+{% verbatim %}{% block content %}
 <div class="pure-u-1">
     <p><a href="index.html">Accueil</a></p>
 </div>
-{% endblock %}
+{% endblock%}{% endverbatim %}
 ~~~
 
 Où l’on a mis le nom du template dans la variable layout. Puis on a mis notre contenu dans le block content. Nous utiliserons le block content_wrapper pour les pages avec les articles.

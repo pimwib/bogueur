@@ -320,7 +320,7 @@ span.label a:hover { color: #e67e22; }
 
 pre code { display: block; background: #1d1f21; color: #c5c8c6; padding: 0.5em; white-space: pre-wrap; font-size: 80%; }
 
-@media (min-width: 45em) { pre code { font-size: 100%; } }
+@media (min-width: 45em) { pre code { font-size: 85%; } }
 pre .coffeescript .javascript, pre .javascript .xml, pre .tex .formula, pre .xml .javascript, pre .xml .vbscript, pre .xml .css, pre .xml .cdata { opacity: 0.5; }
 
 /* =============================================================
@@ -366,7 +366,7 @@ pre .coffeescript .javascript, pre .javascript .xml, pre .tex .formula, pre .xml
 	Styling for printed content. Adapted from HTML5BP.
 	http://html5boilerplate.com ============================================================= */
 @media print { /*  Universal selector. Reset all content to transparent background, black color, and remove box and text shadows. */
-  * { background: transparent !important; color: black !important; box-shadow: none !important; text-shadow: none !important; }
+  * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
   /*  Specifies page margin */
   @page { margin: 0.5cm; }
   /*  Underline all links */
@@ -385,13 +385,13 @@ pre .coffeescript .javascript, pre .javascript .xml, pre .tex .formula, pre .xml
   thead { display: table-header-group; }
   /*  Avoid inserting a page break inside table rows and images */
   tr, img { page-break-inside: avoid; } }
-header { background: #1d1f21; color: white; text-align: center; padding-right: 5%; padding-left: 5%; }
+header { background: #1d1f21; color: white; text-align: center; padding: 0 5% 1% 5%; }
 
 @media (min-width: 45em) { header { width: 15%; position: fixed; top: 0; bottom: 0; left: 0; z-index: 1; }
   header p.h1 { padding-top: 1.5em; font-size: 4.5em; } }
 header a { color: white; }
 
-section { padding-right: 3%; padding-left: 3%; }
+section { padding: 3%; }
 
 @media (min-width: 45em) { section { float: left; width: 69%; margin-left: 25%; padding-top: 2em; } }
 a.h1 { color: #2c3e50; }
